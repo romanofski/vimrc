@@ -46,9 +46,6 @@ set laststatus=2
 " I like a fancy cursorline
 set cursorline
 
-" Make it visible where we marked a line
-sign define information text=!>
-
 " enable filetype plugins such those for editing XML files
 filetype plugin on
 filetype indent on
@@ -66,10 +63,24 @@ map <F2> <Esc>:1,$!tidy -q -i --show-errors 0<CR>
 map <F7> :BufExplorer<CR>
 map <F8> :Explore<CR>
 map <F9> :SliceBuffer<CR>
+map ,tex :r !cat /home/roman/.vim/templates/artcl.tex.templ
 nnoremap <cr> :noh<cr><cr>
+inoremap ,a ä
+inoremap ,o ö
+inoremap ,u ü
+inoremap ,A Ä
+inoremap ,O Ö
+inoremap ,U Ü
+inoremap ,s ß
+" handling of parenthesis
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+autocmd Syntax html,vim inoremap < <lt>><ESC>i| inoremap > <c-r>=ClosePair('>')<CR>
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap ] <c-r>=ClosePair(']')<CR>
+autocmd Syntax css,c inoremap { {<CR>}<ESC>O | inoremap } <c-r>=CloseBracket()<CR>
+vmap g/ :call SortMultipleLines()<CR>
 
-
-" map pagetemplates filetype to pt, so pts get html syntax coloring
 augroup filetypedetect
     au! BufNewFile,BufRead *.pt         set ft=xml shiftwidth=2 softtabstop=2
     au! BufNewFile,BufRead *.zcml       set ft=xml shiftwidth=2 softtabstop=2
@@ -84,20 +95,8 @@ augroup filetypedetect
     au! BufRead,BufNewFile *.vapi       setfiletype vala
 augroup END
 
-"for having umlauts in american tastatur mode ;)
-inoremap ,a ä
-inoremap ,o ö
-inoremap ,u ü
-inoremap ,A Ä
-inoremap ,O Ö
-inoremap ,U Ü
-inoremap ,s ß
-
 " delete with Strg+D all to signature
 autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
-
-" insert a latex template
-map ,tex :r !cat /home/roman/.vim/templates/artcl.tex.templ
 
 " abbreviations
 ab pdb import pdb; pdb.set_trace()
@@ -134,14 +133,6 @@ function! MapF1()
   endif
 endfunction
 
-
-" handling of parenthesis
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-autocmd Syntax html,vim inoremap < <lt>><ESC>i| inoremap > <c-r>=ClosePair('>')<CR>
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
-autocmd Syntax css,c inoremap { {<CR>}<ESC>O | inoremap } <c-r>=CloseBracket()<CR>
 
 function ClosePair(char)
   if getline('.')[col('.') - 1] == a:char
@@ -187,4 +178,3 @@ function! SortMultipleLines() range
     execute a:firstline . "," . a:lastline . 'sort'
     execute a:firstline . "," . a:lastline . 's/\\\@<=|/\r/g'
 endfunction
-vmap g/ :call SortMultipleLines()<CR>
