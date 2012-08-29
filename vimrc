@@ -73,12 +73,7 @@ inoremap ,O Ö
 inoremap ,U Ü
 inoremap ,s ß
 " handling of parenthesis
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
 autocmd Syntax html,vim inoremap < <lt>><ESC>i| inoremap > <c-r>=ClosePair('>')<CR>
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
-autocmd Syntax css,c inoremap { {<CR>}<ESC>O | inoremap } <c-r>=CloseBracket()<CR>
 vmap g/ :call SortMultipleLines()<CR>
 
 augroup filetypedetect
@@ -97,29 +92,13 @@ augroup END
 
 " delete with Strg+D all to signature
 autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
+" Default Mooball header for python files
+autocmd BufNewFile *.py 0r ~/.vim/templates/copyright_mooball.txt
 
 " abbreviations
 ab pdb import pdb; pdb.set_trace()
 ab impytest import pytest; pytest.set_trace()
 ab cbred border: 1px solid red
-
-" mappings to comment something out fast
-" lhs comments
-map ,# :s/^/#/<CR>
-map ,/ :s/^/\/\//<CR>
-map ,> :s/^/> /<CR>
-map ," :s/^/\"/<CR>
-map ,% :s/^/%/<CR>
-map ,! :s/^/!/<CR>
-map ,; :s/^/;/<CR>
-map ,- :s/^/--/<CR>
-"map ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>
-
-" wrapping comments
-map ,* :s/^\(.*\)$/\/\* \1 \*\//<CR>
-map ,( :s/^\(.*\)$/\(\* \1 \*\)/<CR>
-map ,< :s/^\(.*\)$/<!-- \1 -->/<CR>
-map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 
 " disable F1 for immediately open the help -- make a choice
 inoremap <F1> <Esc>
@@ -133,44 +112,9 @@ function! MapF1()
   endif
 endfunction
 
-
-function ClosePair(char)
-  if getline('.')[col('.') - 1] == a:char
-    return "\<Right>"
-  else
-    return a:char
-  endif
-endf
-
-function CloseBracket()
-  if match(getline(line('.') + 1), '\s*}') < 0
-    return "\<CR>}"
-  else
-    return "\<ESC>j0f}a"
-  endif
-endf
-
-function QuoteDelim(char)
-  let line = getline('.')
-  let col = col('.')
-  if line[col - 2] == "\\"
-    "Inserting a quoted quotation mark into the string
-    return a:char
-  elseif line[col - 1] == a:char
-    "Escaping out of the string
-    return "\<Right>"
-  else
-    "Starting a string
-    return a:char.a:char."\<ESC>i"
-  endif
-endf 
-
 " Use a differen color for pyflakes
 colors relaxedgreen
 highlight SpellBad cterm=bold ctermbg=none ctermfg=brown
-
-" Default Mooball header for python files
-autocmd BufNewFile *.py 0r ~/.vim/templates/copyright_mooball.txt
 
 " Sort multiline imports
 function! SortMultipleLines() range
