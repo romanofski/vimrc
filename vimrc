@@ -62,7 +62,7 @@ call pathogen#infect()
 map <F2> <Esc>:1,$!tidy -q -i --show-errors 0<CR>
 map <F7> :BufExplorer<CR>
 map <F8> :Explore<CR>
-map <F9> :SliceBuffer<CR>
+map <F9> :ToggleSliceBuffer<CR>
 map ,tex :r !cat /home/roman/.vim/templates/artcl.tex.templ
 nnoremap <cr> :noh<cr><cr>
 inoremap ,a ä
@@ -73,7 +73,6 @@ inoremap ,O Ö
 inoremap ,U Ü
 inoremap ,s ß
 " handling of parenthesis
-autocmd Syntax html,vim inoremap < <lt>><ESC>i| inoremap > <c-r>=ClosePair('>')<CR>
 vmap g/ :call SortMultipleLines()<CR>
 
 augroup filetypedetect
@@ -121,4 +120,5 @@ function! SortMultipleLines() range
     execute a:firstline . "," . a:lastline . 's/\\\@<=\n/|'
     execute a:firstline . "," . a:lastline . 'sort'
     execute a:firstline . "," . a:lastline . 's/\\\@<=|/\r/g'
+    execute "'<"
 endfunction
