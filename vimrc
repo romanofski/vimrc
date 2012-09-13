@@ -72,6 +72,7 @@ inoremap ,A Ä
 inoremap ,O Ö
 inoremap ,U Ü
 inoremap ,s ß
+inoremap jj <Esc>
 " handling of parenthesis
 vmap g/ :call SortMultipleLines()<CR>
 
@@ -93,6 +94,9 @@ augroup END
 autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
 " Default Mooball header for python files
 autocmd BufNewFile *.py 0r ~/.vim/templates/copyright_mooball.txt
+" Automatically delete trailing whitespace in python files
+autocmd BufWritePre *.py :%s/\s\+$//e
+
 
 " abbreviations
 ab pdb import pdb; pdb.set_trace()
