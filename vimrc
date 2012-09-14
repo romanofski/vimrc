@@ -59,10 +59,7 @@ syntax on
 call pathogen#infect()
 
 "" Map Python trickery to function keys and commands
-map <F2> <Esc>:1,$!tidy -q -i --show-errors 0<CR>
-map <F7> :BufExplorer<CR>
 map <F8> :Explore<CR>
-map <F9> :ToggleSliceBuffer<CR>
 map ,tex :r !cat /home/roman/.vim/templates/artcl.tex.templ
 nnoremap <cr> :noh<cr><cr>
 inoremap ,a ä
@@ -72,9 +69,6 @@ inoremap ,A Ä
 inoremap ,O Ö
 inoremap ,U Ü
 inoremap ,s ß
-inoremap jj <Esc>
-" handling of parenthesis
-vmap g/ :call SortMultipleLines()<CR>
 
 augroup filetypedetect
     au! BufNewFile,BufRead *.pt         set ft=xml shiftwidth=2 softtabstop=2
@@ -89,6 +83,10 @@ augroup filetypedetect
     au! BufRead,BufNewFile *.vala       setfiletype vala
     au! BufRead,BufNewFile *.vapi       setfiletype vala
 augroup END
+
+autocmd FileType html map <F2> <Esc>:1,$!tidy -q -i --show-errors 0<CR>
+autocmd FileType python map <F9> :ToggleSliceBuffer<CR>
+autocmd FileType python vmap g/ :call SortMultipleLines()<CR>
 
 " delete with Strg+D all to signature
 autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
