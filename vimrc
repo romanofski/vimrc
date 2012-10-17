@@ -93,9 +93,9 @@ autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
 " Default Mooball header for python files
 autocmd BufNewFile *.py 0r ~/.vim/templates/copyright_mooball.txt
 " Automatically delete trailing whitespace in python files
-autocmd FileType python exe 'command! -nargs=0 PythonTidy :call s:tidy_python()'
+command! -nargs=0 TidyWhiteSpace :call s:tidy_whitespace()
 
-function s:tidy_python()
+function s:tidy_whitespace()
     exe ':%s/\s\+$//e'
 endfunction
 
