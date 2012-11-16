@@ -123,10 +123,11 @@ highlight SpellBad cterm=bold ctermbg=none ctermfg=brown
 
 " Sort multiline imports
 function! SortMultipleLines() range
+    let save_cursor = getpos(".")
     execute a:firstline . "," . a:lastline . 's/\\\@<=\n/|'
     execute a:firstline . "," . a:lastline . 'sort'
     execute a:firstline . "," . a:lastline . 's/\\\@<=|/\r/g'
-    execute "'<"
+    call setpos('.', save_cursor)
 endfunction
 
 " de-martinify the code, basically resetting the formatting to be more
