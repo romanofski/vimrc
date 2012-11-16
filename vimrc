@@ -87,6 +87,7 @@ augroup END
 autocmd FileType html map <F2> <Esc>:1,$!tidy -q -i --show-errors 0<CR>
 autocmd FileType python map <F9> :ToggleSliceBuffer<CR>
 autocmd FileType python vmap g/ :call SortMultipleLines()<CR>
+autocmd FileType python vmap m/ :call DeMartinify()<CR>
 
 " delete with Strg+D all to signature
 autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
@@ -127,3 +128,15 @@ function! SortMultipleLines() range
     execute a:firstline . "," . a:lastline . 's/\\\@<=|/\r/g'
     execute "'<"
 endfunction
+
+" de-martinify the code, basically resetting the formatting to be more
+" pep8 alike
+function! DeMartinify() range
+    " trim whitespace from open parenthesis
+    silent! execute a:firstline . "," . a:lastline . 's/\(\w(\)\s/\1/g'
+    " ... close parenthesis
+    silent! execute a:firstline . "," . a:lastline . 's/\s)/)/g'
+    " keyword assignments in parenthesis, e.g. dict(foo = bar)
+    silent! execute a:firstline . "," . a:lastline . 's/\((.*\)\s\(=\{1,2}\)\s/\1\2/g'
+endfunction
+
