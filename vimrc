@@ -58,6 +58,10 @@ syntax on
 " pathogen takes care of easily installing new vim bundles
 call pathogen#infect()
 
+" pep8 plugin: ignore a few errors which are currently not *work*
+" compatible: multiple spaces after ',' and line too long. 
+let g:pep8_ignore="E501,E241"
+
 "" Map Python trickery to function keys and commands
 map <F8> :Explore<CR>
 map ,tex :r !cat /home/roman/.vim/templates/artcl.tex.templ
