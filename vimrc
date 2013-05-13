@@ -81,7 +81,7 @@ augroup filetypedetect
     au! BufNewFile,BufRead *.xml        set ft=xml shiftwidth=2 softtabstop=2
     au! BufNewFile,BufRead *.css.dtml   set syntax=css
     au! BufNewFile,BufRead ChangeLog    set shiftwidth=8 tabstop=8 noexpandtab
-    au! BufNewFile,BufRead *.txt        set ft=rst
+    au! BufNewFile,BufRead *.txt        set ft=markdown
     autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
     autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
     au! BufRead,BufNewFile *.vala       setfiletype vala
