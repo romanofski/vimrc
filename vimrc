@@ -33,7 +33,8 @@ set sidescroll=5
 set listchars=tab:_¸,trail:·
 set list
 set tw=72
-set spelllang=en,de,fr
+set spelllang=en
+set spell
 " set the buffer as hidden, so that vim don't pesters evertime about
 " saving when switching between buffers
 set hidden
@@ -120,7 +121,6 @@ function! MapF1()
 endfunction
 
 " Use a differen color for pyflakes
-colors relaxedgreen
 highlight SpellBad cterm=bold ctermbg=none ctermfg=brown
 
 " Sort multiline imports
