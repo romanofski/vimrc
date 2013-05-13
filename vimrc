@@ -95,8 +95,6 @@ autocmd FileType python vmap m/ :call DeMartinify()<CR>
 
 " delete with Strg+D all to signature
 autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
-" Default Mooball header for python files
-autocmd BufNewFile *.py 0r ~/.vim/templates/copyright_mooball.txt
 " Automatically delete trailing whitespace in python files
 command! -nargs=0 TidyWhiteSpace :call s:tidy_whitespace()
 
