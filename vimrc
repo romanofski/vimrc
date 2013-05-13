@@ -143,3 +143,5 @@ function! DeMartinify() range
     silent! execute a:firstline . "," . a:lastline . 's/\((.*\)\s\(=\{1,2}\)\s/\1\2/g'
 endfunction
 
+set background=dark
+colorscheme solarized
