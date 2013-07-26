@@ -87,12 +87,15 @@ augroup filetypedetect
     autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
     au! BufRead,BufNewFile *.vala       setfiletype vala
     au! BufRead,BufNewFile *.vapi       setfiletype vala
+    au  BufRead,BufNewFile *.rb         set ts=2 sts=2 sw=2 expandtab
 augroup END
 
 autocmd FileType html map <F2> <Esc>:1,$!tidy -q -i --show-errors 0<CR>
 autocmd FileType python map <F9> :ToggleSliceBuffer<CR>
 autocmd FileType python vmap g/ :call SortMultipleLines()<CR>
 autocmd FileType python vmap m/ :call DeMartinify()<CR>
+autocmd FileType python ab pdb import pdb; pdb.set_trace()
+autocmd FileType ruby ab pdb require 'ruby-debug'; debugger
 
 " delete with Strg+D all to signature
 autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
@@ -104,7 +107,6 @@ function s:tidy_whitespace()
 endfunction
 
 " abbreviations
-ab pdb import pdb; pdb.set_trace()
 ab impytest import pytest; pytest.set_trace()
 ab cbred border: 1px solid red
 
