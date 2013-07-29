@@ -1,3 +1,17 @@
+" Needed for additional vim plugins
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" Let Vundle manage Vundle
+" required!
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
+Bundle 'corntrace/bufexplorer'
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+
 " Vim settings
 set smartcase
 set shiftwidth=4
@@ -40,7 +54,6 @@ set spell
 set hidden
 set tags=tags;/
 " colour the textwidth
-set cc=+1
 set statusline=%{fugitive#statusline()}<%f%=\ [%1*%M%*%n%R%H]\ %-19(%3l,%02c%03V%)'%02b'%{&enc}%h>
 " Always show the status line
 set laststatus=2
@@ -55,9 +68,6 @@ filetype indent on
 set ttymouse=xterm2
 colo default
 syntax on
-
-" pathogen takes care of easily installing new vim bundles
-call pathogen#infect()
 
 " pep8 plugin: ignore a few errors which are currently not *work*
 " compatible: multiple spaces after ',' and line too long. 
