@@ -11,6 +11,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
+Bundle 'janx/vim-rubytest'
 
 " Vim settings
 set smartcase
@@ -172,3 +173,9 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
+" vim-airline
+let g:airline_powerline_fonts=0
+
+" vim-rubytest
+let g:rubytest_in_quickfix = 1
