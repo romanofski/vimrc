@@ -12,6 +12,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'janx/vim-rubytest'
+Bundle 'xolox/vim-session'
+Bundle 'vim-misc'
 
 " Vim settings
 set smartcase
@@ -179,3 +181,7 @@ let g:airline_powerline_fonts=0
 
 " vim-rubytest
 let g:rubytest_in_quickfix = 1
+
+" vim-session
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
