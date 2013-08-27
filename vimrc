@@ -108,8 +108,8 @@ autocmd FileType html map <F2> <Esc>:1,$!tidy -q -i --show-errors 0<CR>
 autocmd FileType python map <F9> :ToggleSliceBuffer<CR>
 autocmd FileType python vmap g/ :call SortMultipleLines()<CR>
 autocmd FileType python vmap m/ :call DeMartinify()<CR>
-autocmd FileType python ab pdb import pdb; pdb.set_trace()
-autocmd FileType ruby ab pdb require 'ruby-debug'; debugger
+autocmd FileType python iab pdb import pdb; pdb.set_trace()
+autocmd FileType ruby iab pdb require 'ruby-debug'; debugger
 
 " delete with Strg+D all to signature
 autocmd FileType mail map <C-d> :.;/^-- $/d<CR>O-- <UP><End><CR>
