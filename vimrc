@@ -15,6 +15,9 @@ Bundle 'tpope/vim-rails'
 Bundle 'janx/vim-rubytest'
 Bundle 'xolox/vim-session'
 Bundle 'vim-misc'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 
 " Vim settings
 set smartcase

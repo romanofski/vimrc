@@ -1,0 +1,11 @@
+snippet fdeb
+	File.open(ENV['HOME'] + '/public_html/foo.html', 'w'){|f| f.write(${1})}
+
+snippet def "method definition"
+	def ${1:method_name}
+		${2}
+	end
+	
+
+snippet b "block"
+	{ |${1:var}| ${2} }
