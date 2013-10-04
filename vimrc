@@ -193,3 +193,8 @@ let g:rubytest_in_quickfix = 1
 " vim-session
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
+
+" ctrlp
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v(eggs|parts)',
+    \ }
