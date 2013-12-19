@@ -18,6 +18,7 @@ Bundle 'vim-misc'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
+Bundle 'scrooloose/syntastic'
 
 " Vim settings
 set smartcase
@@ -181,7 +182,7 @@ function! s:align()
 endfunction
 
 " vim-airline
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 
 " vim-rubytest
 let g:rubytest_in_quickfix = 1
