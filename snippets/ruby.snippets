@@ -9,3 +9,13 @@ snippet def "method definition"
 
 snippet b "block"
 	{ |${1:var}| ${2} }
+
+snippet test "test block"
+	test "${1:test_name}" do
+		${2}
+	end
+
+snippet do "block"
+	do
+		${1}
+	end
