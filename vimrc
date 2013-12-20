@@ -18,6 +18,7 @@ Bundle 'vim-misc'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
+Bundle 'elixir-lang/vim-elixir'
 Bundle 'scrooloose/syntastic'
 
 " Vim settings
