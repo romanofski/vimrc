@@ -194,5 +194,5 @@ let g:session_autoload = 'yes'
 
 " ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v(eggs|parts)',
+    \ 'dir': '\v(eggs|parts|coverage)',
     \ }
