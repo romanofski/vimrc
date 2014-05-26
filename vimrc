@@ -3,23 +3,25 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " Let Vundle manage Vundle
 " required!
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'corntrace/bufexplorer'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'janx/vim-rubytest'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
-Bundle 'janx/vim-rubytest'
-Bundle 'xolox/vim-session'
 Bundle 'vim-misc'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'scrooloose/syntastic'
+Bundle 'xolox/vim-session'
+Bundle 'xolox/vim-easytags'
 
 " Vim settings
 set smartcase
