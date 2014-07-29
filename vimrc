@@ -1,27 +1,33 @@
 " Needed for additional vim plugins
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " Let Vundle manage Vundle
 " required!
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'corntrace/bufexplorer'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'garbas/vim-snipmate'
-Bundle 'gmarik/vundle'
-Bundle 'godlygeek/tabular'
-Bundle 'janx/vim-rubytest'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'tomtom/tlib_vim'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-misc'
-Bundle 'xolox/vim-session'
-Bundle 'xolox/vim-easytags'
+Plugin 'gmarik/Vundle.vim'
+
+" everything else
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'corntrace/bufexplorer'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'garbas/vim-snipmate'
+Plugin 'gmarik/vundle'
+Plugin 'godlygeek/tabular'
+Plugin 'janx/vim-rubytest'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tlib_vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-misc'
+Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-easytags'
+
+call vundle#end()
+filetype plugin indent on
 
 " Vim settings
 set smartcase
