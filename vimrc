@@ -20,7 +20,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-misc'
 Plugin 'xolox/vim-session'
@@ -109,7 +108,7 @@ augroup filetypedetect
     au! BufNewFile,BufRead *.xml        set ft=xml shiftwidth=2 softtabstop=2
     au! BufNewFile,BufRead *.css.dtml   set syntax=css
     au! BufNewFile,BufRead ChangeLog    set shiftwidth=8 tabstop=8 noexpandtab
-    au! BufNewFile,BufRead *.txt        set ft=markdown
+    au! BufNewFile,BufReadPost *.md     set ft=markdown
     autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
     autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
     au! BufRead,BufNewFile *.vala       setfiletype vala
