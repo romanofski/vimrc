@@ -24,6 +24,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-easytags'
+Plugin 'chase/vim-ansible-yaml'
 
 call vundle#end()
 filetype plugin indent on
