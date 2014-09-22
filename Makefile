@@ -1,6 +1,6 @@
 $(HOME)/.vim/bundle/Vundle.vim:
 	mkdir -p $(HOME)/.vim
-	git clone https://github.com/gmarik/Vundle.vim.git $@
+	git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 $(HOME)/.vimrc: vimrc
 	ln -s $(shell pwd)/$< $@

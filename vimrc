@@ -1,33 +1,47 @@
 " Needed for additional vim plugins
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" Let Vundle manage Vundle
+set rtp+=~/.vim/bundle/neobundle.vim
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
 " required!
-Plugin 'gmarik/Vundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " everything else
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'corntrace/bufexplorer'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'garbas/vim-snipmate'
-Plugin 'gmarik/vundle'
-Plugin 'godlygeek/tabular'
-Plugin 'janx/vim-rubytest'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-misc'
-Plugin 'xolox/vim-session'
-Plugin 'xolox/vim-easytags'
-Plugin 'chase/vim-ansible-yaml'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'corntrace/bufexplorer'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'garbas/vim-snipmate'
+NeoBundle 'gmarik/neobundle'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'janx/vim-rubytest'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'vim-misc'
+NeoBundle 'xolox/vim-session'
+NeoBundle 'xolox/vim-easytags'
+NeoBundle 'chase/vim-ansible-yaml'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'tools\\update-dll-mingw',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 
-call vundle#end()
+call neobundle#end()
 filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 " Vim settings
 set smartcase
