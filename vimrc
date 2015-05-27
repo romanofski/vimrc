@@ -217,3 +217,6 @@ let g:session_autoload = 'yes'
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v(eggs|parts|coverage)',
     \ }
+
+" ghc-mod
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
