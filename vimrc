@@ -24,6 +24,7 @@ NeoBundle 'xolox/vim-session'
 NeoBundle 'xolox/vim-easytags'
 NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'tools\\update-dll-mingw',
@@ -213,7 +214,7 @@ let g:session_autoload = 'yes'
 
 " ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v(eggs|parts|coverage)',
+    \ 'dir': '\v(eggs|coverage)',
     \ }
 
 " ghc-mod
