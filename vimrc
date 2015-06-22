@@ -215,7 +215,7 @@ let g:session_autoload = 'yes'
 
 " ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v(eggs|coverage)',
+    \ 'dir': '\v(eggs|coverage|dist/build|dist-*sandbox*)',
     \ }
 
 " ghc-mod
